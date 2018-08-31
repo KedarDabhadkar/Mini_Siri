@@ -1,0 +1,10 @@
+After epoch 9, negative log likelihood = 0.247723068889
+After epoch 8, negative log likelihood = 0.284960428315
+After epoch 7, negative log likelihood = 0.336339221883
+After epoch 6, negative log likelihood = 0.407912721675
+After epoch 5, negative log likelihood = 0.506506722261
+After epoch 4, negative log likelihood = 0.63842576814
+After epoch 3, negative log likelihood = 0.810079671667
+After epoch 2, negative log likelihood = 1.03187106269
+After epoch 1, negative log likelihood = 1.31751222072
+After epoch 0, negative log likelihood = 1.66541431364

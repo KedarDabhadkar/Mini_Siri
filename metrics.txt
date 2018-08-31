@@ -1,0 +1,22 @@
+epoch=1 likelihood(train): 0.627158
+epoch=1 likelihood(validation): 1.09293
+epoch=2 likelihood(train): 0.30467
+epoch=2 likelihood(validation): 0.494172
+epoch=3 likelihood(train): 0.164212
+epoch=3 likelihood(validation): 0.240258
+epoch=4 likelihood(train): 0.106993
+epoch=4 likelihood(validation): 0.1483
+epoch=5 likelihood(train): 0.078727
+epoch=5 likelihood(validation): 0.107281
+epoch=6 likelihood(train): 0.06222
+epoch=6 likelihood(validation): 0.084209
+epoch=7 likelihood(train): 0.051507
+epoch=7 likelihood(validation): 0.069398
+epoch=8 likelihood(train): 0.044004
+epoch=8 likelihood(validation): 0.059079
+epoch=9 likelihood(train): 0.038453
+epoch=9 likelihood(validation): 0.051472
+epoch=10 likelihood(train): 0.034175
+epoch=10 likelihood(validation): 0.045628
+error(train): 0.0
+error(test): 0.0
