@@ -3,10 +3,12 @@
 
 # In[4]:
 
+import time
+start = time.time()
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+import codecs
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_recall_fscore_support as score
 from sklearn.linear_model import LogisticRegression
@@ -16,12 +18,12 @@ from sklearn.linear_model import LogisticRegression
 
 
 file ='ner_dataset.csv'
-doc = open(file,'r')
-st = doc.read(100000)
+with codecs.open(file, "r",encoding='utf-8', errors='ignore') as doc:
+    st = doc.read(999)
 
 rel = st.splitlines()
 
-max_epoch = 3
+max_epoch = 5
 
 list_=[]
 for i,datapoint in enumerate(rel[1:]):
@@ -29,7 +31,7 @@ for i,datapoint in enumerate(rel[1:]):
     if len(text) == 4:
         if text[0][0:8]=='Sentence':
             list_.append(['EOS','EOS'])
-            list_.append(['BOS','BOS'])            
+            list_.append(['BOS','BOS'])
         list_.append([text[1],text[3]])
 
 all_data = np.char.lower(list_)
@@ -78,8 +80,8 @@ def generate(trainmodify):
                 ap.append(words.tolist().index(firstword))
                 ap.append(M-1+words.tolist().index(wordmid))
                 ap.append(2*M-2+words.tolist().index(thirdword))
-                
-                label.append(uniq_class.tolist().index(trainmodify[i,1]))                            
+
+                label.append(uniq_class.tolist().index(trainmodify[i,1]))
         if len(ap) != 0:
             Xttrans.append(ap)
     return Xttrans,label
@@ -103,8 +105,16 @@ predicted = log.predict(np.array(Xtesttrans).reshape(-1,3))
 
 # In[19]:
 
+print ('Confusion matrix:')
+print(confusion_matrix(test_labels, predicted, labels=np.unique(test_labels)))
 
+
+# In[54]:
 precision, recall, fscore, class_count = score(test_labels, predicted, labels=np.unique(test_labels))
+
+print ('F1-Scores:')
+print(fscore)
+
 print ('\n Classification metrics: \n')
 for i in range(np.unique(test_labels).shape[0]):
     print (uniq_class[i])
@@ -113,5 +123,8 @@ for i in range(np.unique(test_labels).shape[0]):
     print ('\tfscore: ' + '{0:.5f}'.format(fscore[i]))
     print ('\tTotal datapoints under this class: {}'.format(class_count[i]))
 
-print ('\nF1 MACRO: {0:.5f}'.format(np.mean(fscore)))
+print ('\nAverage F1 MACRO: {0:.5f}'.format(np.sum(np.array(class_count)*np.array(fscore))/sum(class_count)))
 
+end = time.time()
+
+print ('Total run time:{}'.format(end-start))

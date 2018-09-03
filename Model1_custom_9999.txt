@@ -1,0 +1,75 @@
+Completed epoch: 1
+Completed epoch: 2
+Completed epoch: 3
+Completed epoch: 4
+Completed epoch: 5
+Confusion matrix:
+[[ 0  0  0  0  0  3]
+ [ 0  1  0  0  0  2]
+ [ 0  0  0  0  0  2]
+ [ 0  0  0  0  0  3]
+ [ 0  0  0  0  0  1]
+ [ 0  0  0  0  0 56]]
+F1-Scores:
+[0.         0.5        0.         0.         0.         0.91056911]
+
+ Classification metrics: 
+
+b-art
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 0
+b-geo
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 3
+b-gpe
+	precision: 1.00000
+	recall: 0.33333
+	fscore: 0.50000
+	Total datapoints under this class: 3
+b-org
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 2
+b-per
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 0
+b-tim
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 3
+i-art
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 0
+i-geo
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 0
+i-org
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 1
+i-per
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 0
+o
+	precision: 0.83582
+	recall: 1.00000
+	fscore: 0.91057
+	Total datapoints under this class: 56
+
+Average F1 MACRO: 0.77194
+Total time to sum = 1.2314691543579102

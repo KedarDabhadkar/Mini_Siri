@@ -1,0 +1,136 @@
+Completed epoch: 1
+Completed epoch: 2
+Completed epoch: 3
+Completed epoch: 4
+Completed epoch: 5
+0.03515647870007161  and  0.04809857505719587
+Confusion matrix:
+[[    4     0     4     2     0     7     0     1     0     0     0     0
+      0     1     0     0    24]
+ [    0     8     0     3     0     2     0     1     0     0     0     0
+      0     0     0     1    12]
+ [    1     0  2906    42     0   118    24    28     0     0   113     0
+      0     8    19     5   486]
+ [    1     0    46  1582     0     3     2     0     0     0     3     0
+      0     0     1     2    29]
+ [    0     0     0     0     5     0     0     0     0     0     0     0
+      0     0     0     1     9]
+ [    6     0   259    26     0  1084    42    11     0     1    11     0
+      0    19    30     2   644]
+ [    1     0    32     2     0    43  1072     3     0     0     2     0
+      0    11    55     2   449]
+ [    0     0    26     0     0     2     0  1676     0     0     0     0
+      0     0     0    32   331]
+ [    0     1     0     0     0     0     0     0     1     0     2     0
+      0     4     1     0    13]
+ [    0     1     0     0     0     0     0     0     0     2     0     0
+      0     2     0     0    20]
+ [    0     0    21     1     0     2     2     0     0     0   505     0
+      0    24    19     0   109]
+ [    0     0     0     4     0     1     0     0     0     0     3    23
+      0     0     0     0     1]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      1     0     0     0     3]
+ [    0     0    28     4     0    33    19     1     1     2    71     0
+      0   688    56     6   840]
+ [    0     0     1     1     0    18    69     0     1     0    29     0
+      0    42  1286     0   259]
+ [    0     0     7     0     0     0     2    67     0     0     1     0
+      0     1     1   383   167]
+ [    0     0    24    12     0    66    30    54     1     0    27     0
+      0    75     9    40 84796]]
+F1-Scores:
+[0.14285714 0.43243243 0.81813063 0.94504182 0.5        0.61696073
+ 0.73074301 0.85750831 0.07692308 0.13333333 0.69655172 0.83636364
+ 0.4        0.52439024 0.80804273 0.69446963 0.97845678]
+
+ Classification metrics: 
+
+b-art
+	precision: 0.30769
+	recall: 0.09302
+	fscore: 0.14286
+	Total datapoints under this class: 43
+b-eve
+	precision: 0.80000
+	recall: 0.29630
+	fscore: 0.43243
+	Total datapoints under this class: 27
+b-geo
+	precision: 0.86643
+	recall: 0.77493
+	fscore: 0.81813
+	Total datapoints under this class: 3750
+b-gpe
+	precision: 0.94223
+	recall: 0.94787
+	fscore: 0.94504
+	Total datapoints under this class: 1669
+b-nat
+	precision: 1.00000
+	recall: 0.33333
+	fscore: 0.50000
+	Total datapoints under this class: 15
+b-org
+	precision: 0.78608
+	recall: 0.50773
+	fscore: 0.61696
+	Total datapoints under this class: 2135
+b-per
+	precision: 0.84945
+	recall: 0.64115
+	fscore: 0.73074
+	Total datapoints under this class: 1672
+b-tim
+	precision: 0.90988
+	recall: 0.81084
+	fscore: 0.85751
+	Total datapoints under this class: 2067
+bos
+	precision: 0.25000
+	recall: 0.04545
+	fscore: 0.07692
+	Total datapoints under this class: 22
+eos
+	precision: 0.40000
+	recall: 0.08000
+	fscore: 0.13333
+	Total datapoints under this class: 25
+i-art
+	precision: 0.65841
+	recall: 0.73939
+	fscore: 0.69655
+	Total datapoints under this class: 683
+i-eve
+	precision: 1.00000
+	recall: 0.71875
+	fscore: 0.83636
+	Total datapoints under this class: 32
+i-geo
+	precision: 1.00000
+	recall: 0.25000
+	fscore: 0.40000
+	Total datapoints under this class: 4
+i-gpe
+	precision: 0.78629
+	recall: 0.39337
+	fscore: 0.52439
+	Total datapoints under this class: 1749
+i-nat
+	precision: 0.87068
+	recall: 0.75381
+	fscore: 0.80804
+	Total datapoints under this class: 1706
+i-org
+	precision: 0.80802
+	recall: 0.60890
+	fscore: 0.69447
+	Total datapoints under this class: 629
+i-per
+	precision: 0.96149
+	recall: 0.99603
+	fscore: 0.97846
+	Total datapoints under this class: 85134
+
+Average F1 MACRO: 0.94240
+Total run time:14816.808136463165

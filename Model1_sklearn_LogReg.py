@@ -3,21 +3,22 @@
 
 # In[1]:
 
+import time
+start = time.time()
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+import codecs
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_recall_fscore_support as score
 
 file ='ner_dataset.csv'
-doc = open(file,'r')
-
-st = doc.read(100000)
+with codecs.open(file, "r",encoding='utf-8', errors='ignore') as doc:
+    st = doc.read(999)
 
 rel = st.splitlines()
 
-max_epoch = 50
+max_epoch = 5
 
 map_={}
 list_=[]
@@ -79,7 +80,7 @@ classtest_num=[]
 for i,example in enumerate(Xtest):
     Xtesttrans.append(words.tolist().index(example))
     classtest_num.append(uniq_class.tolist().index(class_test[i]))
-    
+
 theta_init=np.matrix(np.zeros([M,K]))
 
 
@@ -101,6 +102,14 @@ predicted = log.predict(np.array(Xtesttrans).reshape(-1,1))
 
 
 precision, recall, fscore, class_count = score(class_test, predicted, labels=uniq_class)
+
+print ('Confusion matrix:')
+print (confusion_matrix(class_test, predicted, labels=uniq_class))
+
+print ('F1-Scores:')
+print (fscore)
+
+
 print ('\n Classification metrics: \n')
 for i in range(uniq_class.shape[0]):
     print (uniq_class[i])
@@ -109,11 +118,8 @@ for i in range(uniq_class.shape[0]):
     print ('\tfscore: ' + '{0:.5f}'.format(fscore[i]))
     print ('\tTotal datapoints under this class: {}'.format(class_count[i]))
 
-print ('\nF1 MACRO: {0:.5f}'.format(np.mean(fscore)))
+print ('\nAverage F1 MACRO: {0:.5f}'.format(np.sum(np.array(class_count)*np.array(fscore))/sum(class_count)))
 
+end = time.time()
 
-# In[12]:
-
-
-Xttrans
-
+print ('Total run time:{}'.format(end-start))

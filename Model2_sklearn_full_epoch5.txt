@@ -1,0 +1,130 @@
+Confusion matrix:
+[[    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0    43]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0    27]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0  3750]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0  1669]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0    15]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0  2135]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0  1672]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0  2067]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0    22]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0    25]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0   683]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0    32]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0     4]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0  1749]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0  1706]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0   629]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0 85134]]
+F1-Scores:
+[0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.         0.
+ 0.         0.         0.         0.         0.91298473]
+
+ Classification metrics: 
+
+b-art
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 43
+b-eve
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 27
+b-geo
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 3750
+b-gpe
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 1669
+b-nat
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 15
+b-org
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 2135
+b-per
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 1672
+b-tim
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 2067
+bos
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 22
+eos
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 25
+i-art
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 683
+i-eve
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 32
+i-geo
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 4
+i-gpe
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 1749
+i-nat
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 1706
+i-org
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 629
+i-per
+	precision: 0.83990
+	recall: 1.00000
+	fscore: 0.91298
+	Total datapoints under this class: 85134
+
+Average F1 MACRO: 0.76682
+Total run time:11674.159212112427

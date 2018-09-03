@@ -1,0 +1,133 @@
+Completed epoch: 1
+Completed epoch: 2
+Completed epoch: 3
+Completed epoch: 4
+Completed epoch: 5
+[[    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0     3]
+ [    0     0     0     0     1     0     0     0     0     0     0     0
+      0     0     2     0     5]
+ [    0     0   348     1     0    20    14     1     0     0     3     0
+      0     1     5     0    95]
+ [    0     0     8   199     0     0     0     0     0     0     0     0
+      0     0     0     0    12]
+ [    0     0     0     0     2     0     0     0     0     0     0     0
+      3     0     0     0     0]
+ [    0     0    37     2     3    62    17     0     0     0     0     0
+      0     2     3     0    97]
+ [    0     0     1     0     0     2   183     0     0     0     0     0
+      0     0    21     0    53]
+ [    0     0     3     0     0     0     2   192     0     0     0     0
+      0     0     0     1    63]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     1     0     0     2]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0     1]
+ [    0     0    15     0     0     2     3     0     0     0    48     0
+      0     3     1     0    30]
+ [    0     0     0     0     0     0     0     0     0     0     2     0
+      0     0     0     0     1]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      2     0     0     0     0]
+ [    0     0     3     1     1     8     6     0     0     0     4     0
+      0    34     2     0   104]
+ [    0     0     1     1     0     1    52     0     0     0     0     0
+      0     0   148     0    89]
+ [    0     0     0     0     0     0     1    24     0     0     0     0
+      0     0     1     5    44]
+ [    0     0    45     2     7    13    54     6     0     0     7     0
+      0    39    26     3 11084]]
+[0.         0.         0.73340358 0.93647059 0.21052632 0.37462236
+ 0.61824324 0.79338843 0.         0.         0.57831325 0.
+ 0.57142857 0.27983539 0.59081836 0.11904762 0.96512691]
+
+ Classification metrics: 
+
+b-art
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 3
+b-eve
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 8
+b-geo
+	precision: 0.75488
+	recall: 0.71311
+	fscore: 0.73340
+	Total datapoints under this class: 488
+b-gpe
+	precision: 0.96602
+	recall: 0.90868
+	fscore: 0.93647
+	Total datapoints under this class: 219
+b-nat
+	precision: 0.14286
+	recall: 0.40000
+	fscore: 0.21053
+	Total datapoints under this class: 5
+b-org
+	precision: 0.57407
+	recall: 0.27803
+	fscore: 0.37462
+	Total datapoints under this class: 223
+b-per
+	precision: 0.55120
+	recall: 0.70385
+	fscore: 0.61824
+	Total datapoints under this class: 260
+b-tim
+	precision: 0.86099
+	recall: 0.73563
+	fscore: 0.79339
+	Total datapoints under this class: 261
+i-art
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 3
+i-eve
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 1
+i-geo
+	precision: 0.75000
+	recall: 0.47059
+	fscore: 0.57831
+	Total datapoints under this class: 102
+i-gpe
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 3
+i-nat
+	precision: 0.40000
+	recall: 1.00000
+	fscore: 0.57143
+	Total datapoints under this class: 2
+i-org
+	precision: 0.42500
+	recall: 0.20859
+	fscore: 0.27984
+	Total datapoints under this class: 163
+i-per
+	precision: 0.70813
+	recall: 0.50685
+	fscore: 0.59082
+	Total datapoints under this class: 292
+i-tim
+	precision: 0.55556
+	recall: 0.06667
+	fscore: 0.11905
+	Total datapoints under this class: 75
+o
+	precision: 0.94873
+	recall: 0.98210
+	fscore: 0.96513
+	Total datapoints under this class: 11286
+
+Average F1 MACRO: 0.91048
+Total time to sum = 389.3440887928009

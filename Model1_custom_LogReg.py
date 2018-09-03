@@ -3,9 +3,12 @@
 
 # In[36]:
 
+import time
+start = time.time()
 
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+import codecs
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_recall_fscore_support as score
 
@@ -14,14 +17,13 @@ from sklearn.metrics import precision_recall_fscore_support as score
 
 
 file ='ner_dataset.csv'
-doc = open(file,'r')
+# doc = open(file,'r')
 
+with codecs.open(file, "r",encoding='utf-8', errors='ignore') as doc:
+    st = doc.read(999)
 
+max_epoch = 5
 # In[64]:
-
-
-st = doc.read(100)
-
 
 # In[4]:
 
@@ -32,7 +34,7 @@ rel = st.splitlines()
 # In[5]:
 
 
-max_epoch = 50
+
 
 
 # In[6]:
@@ -231,13 +233,13 @@ errtest
 
 # In[49]:
 
-
+print ('Confusion matrix:')
 print(confusion_matrix(class_test,predtest))
 
 
 # In[54]:
 
-
+print ('F1-Scores:')
 print(score(class_test,predtest)[2])
 
 
@@ -246,6 +248,7 @@ print(score(class_test,predtest)[2])
 
 precision, recall, fscore, class_count = score(class_test, predtest, labels=uniq_class)
 print ('\n Classification metrics: \n')
+
 for i in range(uniq_class.shape[0]):
     print (uniq_class[i])
     print ('\tprecision: ' + '{0:.5f}'.format(precision[i]))
@@ -253,7 +256,9 @@ for i in range(uniq_class.shape[0]):
     print ('\tfscore: ' + '{0:.5f}'.format(fscore[i]))
     print ('\tTotal datapoints under this class: {}'.format(class_count[i]))
 
-print ('\nF1 MACRO: {0:.5f}'.format(np.mean(fscore)))
+print ('\nAverage F1 MACRO: {0:.5f}'.format(np.sum(np.array(class_count)*np.array(fscore))/sum(class_count)))
 
+end = time.time()
 
+print ('Total run time = {}'.format(end-start))
 # In[55]:

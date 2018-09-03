@@ -1,0 +1,135 @@
+Completed epoch: 1
+Completed epoch: 2
+Completed epoch: 3
+Completed epoch: 4
+Completed epoch: 5
+Confusion matrix:
+[[    2     0     7     2     0     7     0     0     0     0     0     0
+      0     0     0     0    25]
+ [    0     8     0     3     0     1     0     0     0     0     0     0
+      0     0     0     0    15]
+ [    0     0  2876    38     0   152    14     0     0     0    66     0
+      0     0    22     0   583]
+ [    0     0    63  1591     0     1     0     0     0     0     0     0
+      0     0     0     0    15]
+ [    0     0     0     0     3     0     0     0     0     0     0     0
+      1     0     0     1    10]
+ [    1     0   370    32     0   832    15     2     0     0     5     0
+      0     2    25     3   849]
+ [    1     0    56     0     0    40   603     2     0     0     6     0
+      0     3   189     0   774]
+ [    0     0    35     1     0     6     0  1438     0     0     1     0
+      0     0     0    93   494]
+ [    0     1     1     0     0     0     1     0     0     0     1     0
+      0     2     1     0    15]
+ [    0     1     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0    24]
+ [    0     0    73     7     0     4     1     1     0     0   365     0
+      0     2    13     0   217]
+ [    0     0     1    22     0     0     0     0     0     0     3     6
+      0     0     0     0     0]
+ [    0     0     0     0     0     0     0     0     0     0     0     0
+      0     0     0     0     4]
+ [    0     0    46    13     0    41    17     0     0     0    60     0
+      0    33    39     2  1498]
+ [    2     2    11     1     0    27   130     0     0     0    21     0
+      0     8   967     0   539]
+ [    0     0     8     0     0     5     0   150     0     0     0     0
+      0     0     1   122   343]
+ [    0     0    58    11     0    26     5    29     0     0    17     0
+      0     2     8    24 85014]]
+F1-Scores:
+[0.08163265 0.41025641 0.78194671 0.93836626 0.33333333 0.5076266
+ 0.4902439  0.77940379 0.         0.         0.59446254 0.31578947
+ 0.         0.03664631 0.65052136 0.2791762  0.96819712]
+
+ Classification metrics: 
+
+b-art
+	precision: 0.33333
+	recall: 0.04651
+	fscore: 0.08163
+	Total datapoints under this class: 43
+b-eve
+	precision: 0.66667
+	recall: 0.29630
+	fscore: 0.41026
+	Total datapoints under this class: 27
+b-geo
+	precision: 0.79778
+	recall: 0.76673
+	fscore: 0.78195
+	Total datapoints under this class: 3751
+b-gpe
+	precision: 0.92446
+	recall: 0.95269
+	fscore: 0.93837
+	Total datapoints under this class: 1670
+b-nat
+	precision: 1.00000
+	recall: 0.20000
+	fscore: 0.33333
+	Total datapoints under this class: 15
+b-org
+	precision: 0.72855
+	recall: 0.38951
+	fscore: 0.50763
+	Total datapoints under this class: 2136
+b-per
+	precision: 0.76718
+	recall: 0.36022
+	fscore: 0.49024
+	Total datapoints under this class: 1674
+b-tim
+	precision: 0.88656
+	recall: 0.69536
+	fscore: 0.77940
+	Total datapoints under this class: 2068
+i-art
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 22
+i-eve
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 25
+i-geo
+	precision: 0.66972
+	recall: 0.53441
+	fscore: 0.59446
+	Total datapoints under this class: 683
+i-gpe
+	precision: 1.00000
+	recall: 0.18750
+	fscore: 0.31579
+	Total datapoints under this class: 32
+i-nat
+	precision: 0.00000
+	recall: 0.00000
+	fscore: 0.00000
+	Total datapoints under this class: 4
+i-org
+	precision: 0.63462
+	recall: 0.01887
+	fscore: 0.03665
+	Total datapoints under this class: 1749
+i-per
+	precision: 0.76443
+	recall: 0.56616
+	fscore: 0.65052
+	Total datapoints under this class: 1708
+i-tim
+	precision: 0.49796
+	recall: 0.19396
+	fscore: 0.27918
+	Total datapoints under this class: 629
+o
+	precision: 0.94022
+	recall: 0.99789
+	fscore: 0.96820
+	Total datapoints under this class: 85194
+
+Average F1 MACRO: 0.90987
+Total time to sum = 5714.543579816818
