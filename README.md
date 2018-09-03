@@ -1,2 +1,2 @@
 # Named_Entity_Recognition
-Extraction of flight information search terms using a custom-built logistic regression model.
+Extraction of relevant terms (name of person, place, etc.) using a custom-built logistic regression model.
