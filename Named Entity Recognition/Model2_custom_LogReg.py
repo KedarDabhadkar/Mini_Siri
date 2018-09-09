@@ -1,10 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul  19 15:02:01 2018
 
-# coding: utf-8
+@author: kdabhadk
+"""
 
-# In[1]:
 import time
+
+# Start timer
 start = time.time()
 
+# import required modules
 import numpy as np
 import pandas as pd
 import codecs
@@ -12,17 +18,19 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_recall_fscore_support as score
 
 
-# In[2]:
-
-
+# Import data
 file ='ner_dataset.csv'
 with codecs.open(file, "r",encoding='utf-8', errors='ignore') as doc:
-    st = doc.read(999)
+    st = doc.read()
 
-rel = st.splitlines()
-
+# Set maximum number of epochs
 max_epoch = 5
 
+#Split sccording to lines
+rel = st.splitlines()
+
+#Selectively parse the first and third columns and store them in a list
+#Add additional text at the beginning and end of sentences
 list_=[]
 for i,datapoint in enumerate(rel[1:]):
     text = datapoint.split(sep=',')
@@ -32,9 +40,17 @@ for i,datapoint in enumerate(rel[1:]):
             list_.append(['BOS','BOS'])
         list_.append([text[1],text[3]])
 
+#Store all the data in the numpy object all_data
+#Cover all characters to lower case
 all_data = np.char.lower(list_)
+
+#Split training as the first 80% of all data
 train = all_data[0:int(0.8*len(list_))]
+
+# validation fraction is 10%
 valid = all_data[int(0.8*len(list_)):int(0.9*len(list_))]
+
+# Test fraction is 10%
 test = all_data[int(0.9*len(list_)):int(len(list_))]
 
 # Making feature matrices for trainng, testing and validation
@@ -53,17 +69,26 @@ uniq_class=np.unique(all_data[:,-1])
 #Get unique words
 words=np.unique(all_data[:,0])
 
-M=len(words) + 1
-K=len(uniq_class)
-N=len(class_)
-Ntest=len(Xtest)
-Nvalid=len(Xvalid)
-
-
-# In[3]:
-
+#Define numbers
+M=len(words) + 1 #Number of rows of feature matrix for training
+K=len(uniq_class) #Number of columns of feature matrix for training
+N=len(class_) #Length of class vector for training
+Ntest=len(Xtest) #Length of class vector for testing
+Nvalid=len(Xvalid) #Length of class vector for validation
 
 def generate(trainmodify):
+    '''
+    Function to generate the required sequential feature matrix.
+    
+    Parameters
+    ----------
+    trainmodify: List of data that has to be converted.
+    
+    Returns
+    ----------
+    Xttrans: Transformed array of data
+    label: List of correspondong labels
+    '''
     Xttrans=[]
     label=[]
 
@@ -84,36 +109,71 @@ def generate(trainmodify):
             Xttrans.append(ap)
     return Xttrans,label
 
-
-# In[4]:
-
-
+# Numerical array for training
 Xttrans,train_labels=generate(train)
+
+# Numerical array for valiation
 Xvtrans,valid_labels=generate(valid)
+
+# Numerical array for test
 Xtesttrans,test_labels=generate(test)
 
-
-# In[5]:
-
-
+# Define the indicator function required in training
 def Indi (a , b):
+    '''
+    Returns 1 if a=b, else returns 0.
+
+    Parametes
+    ----------
+    a,b : Objects
+
+    Returns
+    ----------
+    Boolean, depending on similarity of objects a and b.
+    '''
     if a == b :
         return 1
     else :
         return 0
-
-
-# In[6]:
-
+    
 
 def SGD(Xttrans,train_labels,theta_init,max_epoch):
-    theta=theta_init
-    nllvalid=[]
-    nlltrain=[]
+    
+    '''
+    Stochastic Gradient Descent (SGD) for training parameter matrix
+    using negative log likelihood as the error metric.
+
+    Parameters:
+    ----------
+    1. Xttrans: (np.matrix) Numerical feature matrix for training.
+    2. train_labels: (list) List of class labels of the training data.
+    3. theta_init: (np.matrix) Initialization of parameter matrix.
+    4. max_epoch: (int) Number of epochs.
+
+    Returns:
+    ----------
+    1. theta: (np.matrix) Trained parameter matrix.
+    2. grad: (np.matrix) Matrix of gradient of negative log likelihood with
+                respect to the parameter matrix theta.
+    3. nlltrain: (list) List of negative log likelihood on the training data after every epoch.
+    4. nllvalid: (list) List of negative log likelihood on the validation data after every epoch.
+    '''
+    
+    # Initialize all result parameters
+    theta = theta_init
+    nllvalid = []
+    nlltrain = []
     epoch = 0
+    
+    #SGD loop
     while epoch < max_epoch:
+        
+        #Set negative log likelihood to zero before every epoch
         nll=0
+        
+        #Initialize gradient matrix to matrix of zeros
         grad = np.matrix(np.zeros([3*M-2,K]))
+        
         for i,example in enumerate(Xttrans): #Over N
             denom=0
             for z in range(K):
@@ -138,7 +198,8 @@ def SGD(Xttrans,train_labels,theta_init,max_epoch):
                 theta[exam] = theta[exam] - 0.5 * grad[exam]
             theta[-1,:] = theta[-1,:] - 0.5 * grad[-1,:]
             theta_init=theta
-
+            
+        # Keep track of negative log likelihood on training data
         nll=0
         for i,example in enumerate(Xttrans):
             denom=0
@@ -158,6 +219,7 @@ def SGD(Xttrans,train_labels,theta_init,max_epoch):
                 nll=nll-Indi(train_labels[i],k)/N*np.log(num/denom)
         nlltrain.append(nll)
 
+        # Keep track of negative log likelihood on validation data
         nll=0
         for i,example in enumerate(Xvtrans):
             denom=0
@@ -182,16 +244,9 @@ def SGD(Xttrans,train_labels,theta_init,max_epoch):
 
 theta_init=np.matrix(np.zeros([3*M-2,K]))
 
-
-# In[7]:
-
-
 theta,grad,nlltrain,nllvalid=SGD(Xttrans,train_labels,theta_init,max_epoch)
 
-
-# In[8]:
-
-
+# Train predictions
 predtrain=[]
 errtrain = 0
 for i,example in enumerate(Xttrans):
@@ -205,10 +260,7 @@ for i,example in enumerate(Xttrans):
     if predtrain[i] != train_labels[i]:
         errtrain= errtrain + 1
 
-
-# In[9]:
-
-
+# Test predictions
 predtest=[]
 errtest = 0
 for i,example in enumerate(Xtesttrans):
@@ -222,16 +274,9 @@ for i,example in enumerate(Xtesttrans):
     if predtest[i] != test_labels[i]:
         errtest = errtest + 1
 
-
-# In[10]:
-
-
 print (errtrain/N,' and ',errtest/Ntest)
 
-
-# In[12]:
-
-
+# Calculate error metrics
 precision, recall, fscore, class_count = score(test_labels, predtest, labels=np.unique(test_labels))
 
 print ('Confusion matrix:')

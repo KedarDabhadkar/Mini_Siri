@@ -18,8 +18,6 @@ from sklearn.metrics import precision_recall_fscore_support as score
 
 # Import data
 file ='ner_dataset.csv'
-# doc = open(file,'r')
-
 with codecs.open(file, "r",encoding='utf-8', errors='ignore') as doc:
     st = doc.read()
 
@@ -49,7 +47,7 @@ valid = all_data[int(0.8*len(list_)):int(0.9*len(list_))]
 # Test fraction is 10%
 test = all_data[int(0.9*len(list_)):int(len(list_))]
 
-# Define the indicator function reauired in training
+# Define the indicator function required in training
 def Indi (a , b):
     '''
     Returns 1 if a=b, else returns 0.
@@ -128,7 +126,7 @@ def SGD(Xttrans,class_,theta_init,max_epoch):
     Parameters:
     ----------
     1. Xttrans: (np.matrix) Numerical feature matrix for training.
-    2. class_: (list) List of class labels on the training data.
+    2. class_: (list) List of class labels of the training data.
     3. theta_init: (np.matrix) Initialization of parameter matrix.
     4. max_epoch: (int) Number of epochs.
 
@@ -141,7 +139,7 @@ def SGD(Xttrans,class_,theta_init,max_epoch):
     4. nllvalid: (list) List of negative log likelihood on the validation data after every epoch.
     '''
 
-    # Initiate all result parameters
+    # Initialize all result parameters
     theta=theta_init
     nllvalid=[]
     nlltrain=[]
